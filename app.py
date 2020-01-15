@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
   
 app = Flask(__name__) 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/brandonqlee/Desktop/hab_flask_sql_workshop/todo.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
   
 db = SQLAlchemy(app) 

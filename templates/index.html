@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<title>My Todo List</title> 
+	<link rel="stylesheet" type="text/css" href="../static/index.css"> 
+
+</head> 
+<body> 
+	<h1>Hack@Brown 2020 Todo List</h1> 
+	<div>Create a new todo item: 
+		<form action="{{ url_for('add') }}" method="POST"> 
+			<input type="text" name="todoitem"> 
+			<input type="submit" value="Submit" class="button"> 
+		</form> 
+	</div> 
+	<div> 
+		<h2>Incomplete:</h2> 
+		<ul> 
+			{% for todo in incomplete %} 
+			<li class="task">{{ todo.text }} <a class="complete-button" href="{{ url_for('complete', id=todo.id) }}">Mark As Complete</a></li> 
+			{% endfor %}	 
+		</ul> 
+		<h2>Completed:</h2> 
+		<ul> 
+			{% for todo in complete %} 
+			<li class="task">{{ todo.text }}</li> 
+			{% endfor %} 
+		</ul> 
+	</div> 
+</body> 
+</html> 
